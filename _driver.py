@@ -32,7 +32,7 @@ class _SettingsWidget(_widget.Abstract):
         """
         wrapper = _widget.Container(uid=self._uid)
 
-        wrapper.add_widget(_widget.input.Text(
+        wrapper.append_child(_widget.input.Text(
             weight=10,
             uid='{}[username]'.format(self._uid),
             label=_lang.t('content_export_livejournal@username'),
@@ -40,7 +40,7 @@ class _SettingsWidget(_widget.Abstract):
             value=self._username,
         ))
 
-        wrapper.add_widget(_widget.input.Password(
+        wrapper.append_child(_widget.input.Password(
             uid='{}[password]'.format(self._uid),
             weight=20,
             label=_lang.t('content_export_livejournal@password'),
@@ -48,7 +48,7 @@ class _SettingsWidget(_widget.Abstract):
             value=self._password,
         ))
 
-        wrapper.add_widget(_widget.input.Text(
+        wrapper.append_child(_widget.input.Text(
             uid='{}[lj_like]'.format(self._uid),
             weight=30,
             label=_lang.t('content_export_livejournal@lj_like_buttons'),
@@ -56,7 +56,7 @@ class _SettingsWidget(_widget.Abstract):
             value=self._lj_like,
         ))
 
-        wrapper.add_widget(_widget.input.Hidden(
+        wrapper.append_child(_widget.input.Hidden(
             weight=40,
             uid='title',
             name='{}[title]'.format(self._uid),
