@@ -26,7 +26,7 @@ class _SettingsWidget(_widget.Abstract):
 
         _assetman.add('content_export_livejournal@js/content-export-settings.js')
 
-    def get_html_em(self, **kwargs) -> _html.Element:
+    def _get_element(self, **kwargs) -> _html.Element:
         """Get HTML element of the widget.
         :param **kwargs:
         """
@@ -64,7 +64,7 @@ class _SettingsWidget(_widget.Abstract):
             value=self._title,
         ))
 
-        return self._group_wrap(wrapper)
+        return wrapper
 
 
 class Driver(_content_export.AbstractDriver):
