@@ -13,7 +13,11 @@ def _init():
 
     # Resources
     lang.register_package(__name__, alias='content_export_livejournal')
+
     assetman.register_package(__name__, alias='content_export_livejournal')
+    assetman.js_module('content-export-livejournal-widget-settings',
+                       __name__ + '@js/content-export-livejournal-widget-settings')
+    assetman.t_js(__name__ + '@js/**', 'js')
 
     # Content export driver
     content_export.register_driver(_driver.Driver())

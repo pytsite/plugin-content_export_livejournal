@@ -1,8 +1,7 @@
-"""LiveJournal content_export's Driver.
+"""LiveJournal Content Export Driver
 """
 from frozendict import frozendict as _frozendict
-from pytsite import widget as _widget, html as _html, lang as _lang, assetman as _assetman, util as _util, \
-    logger as _logger
+from pytsite import widget as _widget, html as _html, lang as _lang, util as _util, logger as _logger
 from plugins import content_export as _content_export, livejournal as _livejournal
 
 __author__ = 'Alexander Shepetko'
@@ -23,8 +22,7 @@ class _SettingsWidget(_widget.Abstract):
         self._username = kwargs.get('username', '')
         self._password = kwargs.get('password', '')
         self._lj_like = kwargs.get('lj_like', 'fb,tw,go,vk,lj')
-
-        _assetman.add('content_export_livejournal@js/content-export-settings.js')
+        self._js_module = 'content-export-livejournal-widget-settings'
 
     def _get_element(self, **kwargs) -> _html.Element:
         """Get HTML element of the widget.
