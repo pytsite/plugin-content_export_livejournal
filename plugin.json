@@ -1,4 +1,6 @@
 {
+  "name": "plugins.content_export_livejournal",
+  "version": "0.2.1",
   "description": {
     "en": "LiveJournal Content Export",
     "ru": "Экспорт конетнта в LiveJournal",
