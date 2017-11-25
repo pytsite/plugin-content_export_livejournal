@@ -1,8 +1,8 @@
 """LiveJournal Content Export Driver
 """
 from frozendict import frozendict as _frozendict
-from pytsite import widget as _widget, html as _html, lang as _lang, util as _util, logger as _logger
-from plugins import content_export as _content_export, livejournal as _livejournal
+from pytsite import lang as _lang, util as _util, logger as _logger
+from plugins import widget as _widget, content_export as _content_export, livejournal as _livejournal
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
@@ -24,8 +24,9 @@ class _SettingsWidget(_widget.Abstract):
         self._lj_like = kwargs.get('lj_like', 'fb,tw,go,vk,lj')
         self._js_module = 'content-export-livejournal-widget-settings'
 
-    def _get_element(self, **kwargs) -> _html.Element:
+    def _get_element(self, **kwargs) -> _widget.Container:
         """Get HTML element of the widget.
+
         :param **kwargs:
         """
         wrapper = _widget.Container(uid=self._uid)
@@ -98,7 +99,7 @@ class Driver(_content_export.AbstractDriver):
         """Performs export.
 
         :type entity: plugins.content._model.Content
-        :type exporter: pytsite.content_export._model.ContentExport
+        :type exporter: plugins.content_export._model.ContentExport
         """
         try:
             _logger.info("Export started. '{}'".format(entity.title))
