@@ -6,7 +6,7 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
-def _init():
+def plugin_load():
     from pytsite import lang
     from plugins import content_export, assetman
     from . import _driver
@@ -17,10 +17,7 @@ def _init():
     assetman.register_package(__name__)
     assetman.js_module('content-export-livejournal-widget-settings',
                        __name__ + '@js/content-export-livejournal-widget-settings')
-    assetman.t_js(__name__ + '@js/**', 'js')
+    assetman.t_js(__name__)
 
     # Content export driver
     content_export.register_driver(_driver.Driver())
-
-
-_init()
