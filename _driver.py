@@ -1,12 +1,12 @@
 """LiveJournal Content Export Driver
 """
-from frozendict import frozendict as _frozendict
-from pytsite import lang as _lang, util as _util, logger as _logger
-from plugins import widget as _widget, content_export as _content_export, livejournal as _livejournal
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from frozendict import frozendict as _frozendict
+from pytsite import lang as _lang, util as _util, logger as _logger
+from plugins import widget as _widget, content_export as _content_export, livejournal as _livejournal
 
 
 class _SettingsWidget(_widget.Abstract):

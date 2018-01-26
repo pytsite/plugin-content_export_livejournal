@@ -6,20 +6,19 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
-def _register_assetman_resources():
+def plugin_load():
     from plugins import assetman
 
-    if not assetman.is_package_registered(__name__):
-        assetman.register_package(__name__)
-        assetman.js_module('content-export-livejournal-widget-settings',
-                           __name__ + '@js/content-export-livejournal-widget-settings')
-        assetman.t_js(__name__)
-
-    return assetman
+    assetman.register_package(__name__)
+    assetman.js_module('content-export-livejournal-widget-settings',
+                       __name__ + '@js/content-export-livejournal-widget-settings')
+    assetman.t_js(__name__)
 
 
 def plugin_install():
-    _register_assetman_resources().build(__name__)
+    from plugins import assetman
+
+    assetman.build(__name__)
 
 
 def plugin_load_uwsgi():
@@ -29,7 +28,6 @@ def plugin_load_uwsgi():
 
     # Resources
     lang.register_package(__name__)
-    _register_assetman_resources()
 
     # Content export driver
     content_export.register_driver(_driver.Driver())
