@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.2 (2018-03-30)
+
+Support of `content-export-2.4`.
+
+
 ### 1.1.2 (2018-01-26)
 
 Init code refactored.

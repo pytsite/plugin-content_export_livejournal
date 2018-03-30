@@ -1,6 +1,6 @@
 {
   "name": "content_export_livejournal",
-  "version": "1.1.2",
+  "version": "1.2",
   "description": {
     "en": "LiveJournal Content Export",
     "ru": "Экспорт конетнта в LiveJournal",
@@ -13,11 +13,10 @@
     "url": "https://shepetko.com"
   },
   "requires": {
-    "packages": [],
     "plugins": [
       "assetman",
       "content",
-      "content_export",
+      "content_export>=2.4",
       "livejournal",
       "widget"
     ]
