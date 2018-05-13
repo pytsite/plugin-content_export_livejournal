@@ -22,7 +22,7 @@ class _SettingsWidget(_widget.Abstract):
         self._username = kwargs.get('username', '')
         self._password = kwargs.get('password', '')
         self._lj_like = kwargs.get('lj_like', 'fb,tw,go,vk,lj')
-        self._js_module = 'content-export-livejournal-widget-settings'
+        self._js_modules.append('content-export-livejournal-widget-settings')
 
     def _get_element(self, **kwargs) -> _widget.Container:
         """Get HTML element of the widget.
