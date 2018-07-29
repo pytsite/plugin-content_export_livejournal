@@ -5,7 +5,7 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 from frozendict import frozendict as _frozendict
-from pytsite import lang as _lang, util as _util, logger as _logger
+from pytsite import lang as _lang, util as _util, logger as _logger, html as _html
 from plugins import widget as _widget, content_export as _content_export, livejournal as _livejournal
 
 
@@ -24,44 +24,40 @@ class _SettingsWidget(_widget.Abstract):
         self._lj_like = kwargs.get('lj_like', 'fb,tw,go,vk,lj')
         self._js_modules.append('content-export-livejournal-widget-settings')
 
-    def _get_element(self, **kwargs) -> _widget.Container:
+    def _get_element(self, **kwargs) -> _html.Element:
         """Get HTML element of the widget.
 
         :param **kwargs:
         """
-        wrapper = _widget.Container(uid=self._uid)
+        wrapper = _html.TagLessElement()
 
-        wrapper.append_child(_widget.input.Text(
-            weight=10,
+        wrapper.append(_widget.input.Text(
             uid='{}[username]'.format(self._uid),
             label=_lang.t('content_export_livejournal@username'),
             required=True,
             value=self._username,
-        ))
+        ).renderable())
 
-        wrapper.append_child(_widget.input.Password(
+        wrapper.append(_widget.input.Password(
             uid='{}[password]'.format(self._uid),
-            weight=20,
             label=_lang.t('content_export_livejournal@password'),
             required=True,
             value=self._password,
-        ))
+        ).renderable())
 
-        wrapper.append_child(_widget.input.Text(
+        wrapper.append(_widget.input.Text(
             uid='{}[lj_like]'.format(self._uid),
-            weight=30,
             label=_lang.t('content_export_livejournal@lj_like_buttons'),
             help=_lang.t('content_export_livejournal@lj_like_buttons_help'),
             value=self._lj_like,
-        ))
+        ).renderable())
 
-        wrapper.append_child(_widget.input.Hidden(
-            weight=40,
+        wrapper.append(_widget.input.Hidden(
             uid='title',
             name='{}[title]'.format(self._uid),
             required=True,
             value=self._title,
-        ))
+        ).renderable())
 
         return wrapper
 

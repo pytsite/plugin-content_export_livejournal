@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.4 (2018-07-29)
+
+Support of `widget-2.4`.
+
+
 ### 1.3 (2018-05-13)
 
 Support of `widget-2.0`.
