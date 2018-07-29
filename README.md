@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.4.1 (2018-07-29)
+
+`plugin.json` fixed.
+
+
 ### 1.4 (2018-07-29)
 
 Support of `widget-2.4`.
@@ -31,12 +36,12 @@ Init code refactored.
 
 ### 1.1 (2017-12-13)
 
-Support for PytSite-7.0.
+Support of PytSite-7.0.
 
 
 ### 1.0 (2017-11-25)
 
-Support for PytSite-6.0.
+Support of PytSite-6.0.
 
 
 ### 0.2.1 (2017-08-27)
@@ -46,7 +51,7 @@ Support for PytSite-6.0.
 
 ### 0.2 (2017-04-28)
 
-Support for latest PytSite asset management changes.
+Support of latest PytSite asset management changes.
 
 
 ### 0.1.2 (2017-01-21)
@@ -56,7 +61,7 @@ Support latest PytSite `widget`'s changes.
 
 ### 0.1.1 (2017-01-12)
 
-Support for latest PytSite `form`'s changes.
+Support of latest PytSite `form`'s changes.
 
 
 ### 0.1 (2017-01-08)
